@@ -1,6 +1,7 @@
 ---
 title: React - total basics
 date: "2020-11-14T19:39:38Z"
+description: This post contains my notes about the React basics that I learned by doing the Intro to React tutorial. Text will also contain simple code snippets to demons...
 ---
 
 ![Coffee mug photo](./unsplash.jpg)
