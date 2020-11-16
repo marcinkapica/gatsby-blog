@@ -331,3 +331,8 @@ a:focus {
     list-style-position: inside;
   }
 }
+
+.gatsby-resp-image-figcaption {
+  font-size: var(--fontSize-0);
+  text-align: center;
+}
