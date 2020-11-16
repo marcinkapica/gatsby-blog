@@ -1,11 +1,9 @@
 ---
 title: React - total basics
 date: "2020-11-14T19:39:38Z"
-description: This post contains my notes about the React basics that I learned by doing the Intro to React tutorial. Text will also contain simple code snippets to demons...
 ---
 
-![Coffee mug photo](./unsplash.jpg)
-<span>Photo by <a href="https://unsplash.com/@dsmacinnes?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Danielle MacInnes</a> on <a href="https://unsplash.com/s/photos/beginning?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+![Coffee mug photo](./unsplash.jpg "Photo by [Danielle MacInnes](https://unsplash.com/@dsmacinnes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/beginning?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)")
 
 This post contains my notes about the React basics that I learned by doing the [Intro to React](https://reactjs.org/tutorial/tutorial.html) tutorial. Text will also contain simple code snippets to demonstrate the described aspects.
 
