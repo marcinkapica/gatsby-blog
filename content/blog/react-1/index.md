@@ -79,7 +79,7 @@ As shown, we use key-value pairs for passing data as props. The syntax looks som
 We can pass any other values through props, e.g. numbers, boolean values, arrays and even objects:
 
 ```javascript
-<TextField show={true} limit={500} params={{ height: 100, color: "green" }} />
+<Summary show={true} characterLimit={500} options={{ language: 'en', addEllipsis={false} }} />
 ```
 
 There is important concept to know - the props can be passed from parent component to its children components, but not the other way around. This is called one-way data flow.
