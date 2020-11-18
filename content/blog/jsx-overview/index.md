@@ -9,15 +9,13 @@ This post is about JSX in React. We will take a closer look at what it is and wh
 
 ## What is JSX?
 
-JSX (JavaScript XML) is a syntax that helps us write views in React. The output of JSX is called an _element_. Let's see some example of a component definition that uses JSX:
+JSX (JavaScript XML) is a syntax that helps us write views in React. The output of JSX is called an _element_:
 
-```javascript
-function HelloWorld() {
-  return <div>Hello World</div>;
-}
+```jsx
+const element = <p>The mean diameter of the Moon is 3474.8 km</p>;
 ```
 
-This function returns a `<div>` with a text `Hello World`. At first glance the return value `<div>Hello World</div>` looks like plain HTML string, but after closer examination we can see there are no quotes enclosing it. That's JSX.
+This examplary element consists of a paragraph containing a text. At first glance it looks like plain HTML string, but after closer examination we can see there are no quotes enclosing it. That's JSX.
 
 React uses Babel to transpile JSX to a JavaScript function call. We will take a look at it later in this article, but firstly let's see what some key JSX aspects that we should be aware of.
 
@@ -25,10 +23,8 @@ React uses Babel to transpile JSX to a JavaScript function call. We will take a 
 
 One of the superpowers of JSX is that it can contain any valid JavaScript expression. As a reminder - expression is a snippet of code that evaluates to a value. Let's see an example:
 
-```javascript
-function Year(props) {
-  return <div>Current year is: {new Date().getFullYear()}</div>;
-}
+```jsx
+const yearElement = <div>Current year is: {new Date().getFullYear()}</div>;
 ```
 
 Here we have a JSX that holds a string `Current year is: ` followed by a JavaScript expression. Expressions in JSX must be contained within curly braces. In this example the expression creates a new `Date` object instance and calls its method to get a year. So at the end the content within `<div>` will be rendered as `Current year is: 2020`.
@@ -39,18 +35,17 @@ Important thing to be aware is that the JavaScript code within JSX is not some n
 
 Another useful aspect of JSX is that we can use it as an expression too. This gives us much flexibility. See following example:
 
-```javascript
+```jsx
 function wrapWithDiv(element) {
   return <div>{element}</div>;
 }
 
-function MyComponent() {
-  const btn = <button>Click</button>;
-  return wrapWithDiv(btn);
+const btn = <button>Click</button>;
+const wrappedBtn = wrapWithDiv(btn);
 }
 ```
 
-In `MyComponent` the JSX expression is assigned to a `btn` variable. Then in the return statement we are using this variable as an argument to a function. This function wraps our JSX element with a `<div>` and returns another JSX element.
+Here the JSX expression is assigned to a `btn` constant. Then we are using this constant as an argument to a function. This function wraps our JSX element with a `<div>` and returns another JSX element. Thus the value of `wrappedBtn` will be `<div><button>Click</button></div>`.
 
 We can also use JSX in loops or conditionals. Here is a snippet demonstrating usage of JSX in a ternary operator:
 
@@ -69,7 +64,7 @@ class ClickButton extends React.Component {
 }
 ```
 
-In this example, depending on the state we either return a button or a paragraph.
+In this example, depending on the state of the component we either return a button or a paragraph.
 
 ## Attributes/props in JSX
 
@@ -89,7 +84,7 @@ If we want the value to be a string, we need to enclose it with quotes. If we wa
 
 First attribute value is passed as string. Rest are expressions with boolean, number, array and an object respectively.
 
-Because JSX is transpiled to JavaScript function, some standard attribute names, e.g. `class` or `for`, are not valid. In this case we need to use other names - `className` or `htmlFor`. The attribute names should be written using `camelCase` naming convention.
+Because JSX is transpiled to JavaScript function, some standard attribute names, e.g. `class` or `for`, are not valid. In this case we need to use `className` or `htmlFor`. The attribute names should be written using `camelCase` convention.
 
 Additionally, React introduces few new attributes that are not present in normal DOM. One of this attributes is `key` which is used within dynamically generated lists.
 
@@ -105,7 +100,7 @@ First argument should be an HTML tag name or a React component. Second should be
 
 As an example, here is some JSX element definition:
 
-```javascript
+```jsx
 <article className="blogpost" show={true}>
   Really interesting content
 </article>
