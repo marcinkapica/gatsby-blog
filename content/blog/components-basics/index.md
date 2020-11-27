@@ -13,8 +13,6 @@ As we already know, React is a library for building user interfaces. And compone
 
 > React lets you compose complex UIs from small and isolated pieces of code called “components”.
 
-TODO - better example
-
 To give some example, lets imagine a profile card element that could be displayed on a website that shows keynote speakers on an upcoming conference:
 
 ![Example profile card](./profile-card.png)
