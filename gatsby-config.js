@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `mkapica.com blog`,
+    title: `mkapica.com`,
     author: {
       name: `Marcin Kapica`,
       summary: "",
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Hi, I'm Marcin Kapica, a software developer. In this blog I describe new programming-related concepts and techniques that I learned. I also share my thoughts about some of the aspects of working as a software developer.`,
     siteUrl: `https://mkapica.com/`,
     social: {
       twitter: ``,
