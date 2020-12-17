@@ -221,9 +221,9 @@ Firstly, let's see how to render a dynamic list that will reflect values from an
 function List(props) {
   return (
     <ul>
-      {props.employees.map(employee => {
-        return <li key={employee.employeeId}>{employee.name}</li>;
-      })}
+      {props.employees.map(employee => (
+        <li key={employee.employeeId}>{employee.name}</li>
+      ))}
     </ul>
   );
 }
