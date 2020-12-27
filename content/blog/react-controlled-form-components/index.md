@@ -241,7 +241,7 @@ handleChange = e => {
 See the working code on CodePen:
 https://codepen.io/mkapica/pen/zYKzVvr
 
-## Checbox
+## Checkbox
 
 Checkbox is slightly different than fields from the previous examples. Instead of `value` attribute, we use the `checked` attribute that accepts Boolean values:
 
