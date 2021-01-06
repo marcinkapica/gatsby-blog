@@ -43,8 +43,6 @@ As a side note, we could also use the self-closing tag syntax and still pass som
 <MyComponen children="Hello" />
 ```
 
-This is however not as readable as the syntax with two separate tags and the content between them.
-
 ## How it works internally
 
 Internally, Babel transpiles JSX to JavaScript using the `React.createElement(type, props, children)` method call. For example, this JSX:
