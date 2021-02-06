@@ -3,7 +3,7 @@ title: Using ESLint and Prettier in Create React App
 date: "2021-01-28"
 ---
 
-![Jars with food and spices](./agence-olloweb-d9ILr-dbEdg-unsplash.jpg "Photo by [Agence Olloweb](https://unsplash.com/@olloweb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/examination?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)")
+![Magnifying glass over keyboard](./agence-olloweb-d9ILr-dbEdg-unsplash.jpg "Photo by [Agence Olloweb](https://unsplash.com/@olloweb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/examination?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)")
 
 Recently I needed to set up ESLint and Prettier in my project that was based on Create React App. In this article I describe the steps that I did and also summarize some key aspects of this topic.
 
@@ -28,7 +28,11 @@ One of the most popular tools for this is [Prettier](https://prettier.io/). It w
 
 ## ESLint in Create React App
 
-Create React App comes with ESLint config which we can additionally extend and configure according to our needs. The code is linted during each compilation. If there are errors, compilation fails with a `Failed to compile` message in the browser and in the console. This helps us writing the code, because we can immediately see what is wrong and the problems are not piling up.
+Create React App comes with ESLint config which we can additionally extend and configure according to our needs. The code is linted during each compilation. If there are errors, compilation fails with a `Failed to compile` message in the browser and in the console:
+
+![Message with compilation errors](./failed-compilation-message.png "Message with compilation errors")
+
+This helps us writing the code, because we can immediately see what is wrong and the problems are not piling up.
 
 ## Adding and configuring ESLint and Prettier
 
@@ -171,7 +175,11 @@ After all setup is done, we can use our configured ESLint to check the JavaScrip
 - `yarn eslint fileA.js fileB.js` - runs ESLint to check specified files
 - `yarn eslint location/**/*.js` - runs ESLint to check all `.js` files in specified location
 
-The result will be printed to console where we can examine the problems. Some problems, such as incorrect quotes, can be fixed automatically by using additional `--fix` flag:
+The result will be printed to console where we can examine the problems:
+
+![Linting problems printed to console](./linting-errors-terminal.png "Linting problems printed to console")
+
+Some problems, such as incorrect quotes, can be fixed automatically by using additional `--fix` flag:
 
 - `yarn eslint location/**/*.js --fix`.
 
@@ -179,7 +187,7 @@ Instead of typing the commands manually each time, we can create handy scripts i
 
 ```json
 "scripts": {
-  "lint": "eslint 'src/**/*.{js,jsx}'",
+  "lint": "eslint 'src/**/*.js'",
   "lint-fix": "npm run lint -- --fix"
 }
 ```
@@ -194,9 +202,7 @@ This part is not required for ESLint to work, but it is very convenient to have 
 
 1. Install extension for ESLint. I am using [VS Code ESLint](https://github.com/Microsoft/vscode-eslint).
 
-2. Install extension for Prettier. I am using [Prettier Formatter for Visual Studio Code](https://github.com/prettier/prettier-vscode).
-
-3. Configure VSCode settings. Below are the relevant settings that we can add in the VSCode `settings.json` file.The important thing here is that we are enabling the editor to use ESLint to fix all fixable problems (including incorrect formatting) after each file save. Because of that, to avoid conflicts, we need to disable the default IDE and Prettier formatting in `.js` files.
+2. Configure VSCode settings. Below are the relevant settings that we can add in the VSCode `settings.json` file:
 
 ```json
   "editor.formatOnSave": true,
@@ -215,4 +221,12 @@ This part is not required for ESLint to work, but it is very convenient to have 
   ]
 ```
 
-When the steps are done, we should be able to see the problems in the code. All problems will be also listed in the "Problems" panel.
+The important thing here is that we are enabling the editor to use ESLint to fix all fixable problems (including incorrect formatting) after each file save. Because of that, to avoid formatting clashes, we need to disable the default IDE formatting in `.js` files. If we are also using [Prettier Formatter for Visual Studio Code](https://github.com/prettier/prettier-vscode) extension, we also need to disable it for `.js` files, since we are already formatting them using Prettier indirectly through ESLint.
+
+When the steps are done, we should be able to see the problems in the code. A tolltip with detailed explanation of the issue will appear after hovering over the problematic code:
+
+![Problematic code and a tooltip with the details of an issue in VSCode](./code-problem.png "Problematic code and a tooltip with the details of an issue")
+
+All problems will be also listed in the "Problems" panel:
+
+!["Problems" panel in VSCode](./vscode-panel.png '"Problems" panel in VSCode')
